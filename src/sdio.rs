@@ -93,32 +93,32 @@ macro_rules! pins {
     feature = "stm32f479"
 ))]
 pins! {
-    CLK: [PC12<Alternate<PushPull, 12>>]
-    CMD: [PD2<Alternate<PushPull, 12>>]
-    D0: [PC8<Alternate<PushPull, 12>>]
-    D1: [PC9<Alternate<PushPull, 12>>]
-    D2: [PC10<Alternate<PushPull, 12>>]
-    D3: [PC11<Alternate<PushPull, 12>>]
+    CLK: [PC12<Alternate<12, PushPull>>]
+    CMD: [PD2<Alternate<12, PushPull>>]
+    D0: [PC8<Alternate<12, PushPull>>]
+    D1: [PC9<Alternate<12, PushPull>>]
+    D2: [PC10<Alternate<12, PushPull>>]
+    D3: [PC11<Alternate<12, PushPull>>]
 }
 
 #[cfg(any(feature = "stm32f412", feature = "stm32f413", feature = "stm32f423"))]
 pins! {
-    CLK: [PB15<Alternate<PushPull, 12>>]
-    CMD: [PA6<Alternate<PushPull, 12>>]
-    D0: [PB4<Alternate<PushPull, 12>>, PB6<Alternate<PushPull, 12>>]
-    D1: [PA8<Alternate<PushPull, 12>>]
-    D2: [PA9<Alternate<PushPull, 12>>]
-    D3: [PB5<Alternate<PushPull, 12>>]
+    CLK: [PB15<Alternate<12, PushPull>>]
+    CMD: [PA6<Alternate<12, PushPull>>]
+    D0: [PB4<Alternate<12, PushPull>>, PB6<Alternate<12, PushPull>>]
+    D1: [PA8<Alternate<12, PushPull>>]
+    D2: [PA9<Alternate<12, PushPull>>]
+    D3: [PB5<Alternate<12, PushPull>>]
 }
 
 #[cfg(feature = "stm32f411")]
 pins! {
-    CLK: [PB15<Alternate<PushPull, 12>>]
-    CMD: [PA6<Alternate<PushPull, 12>>]
-    D0: [PB4<Alternate<PushPull, 12>>, PB7<Alternate<PushPull, 12>>]
-    D1: [PA8<Alternate<PushPull, 12>>]
-    D2: [PA9<Alternate<PushPull, 12>>]
-    D3: [PB5<Alternate<PushPull, 12>>]
+    CLK: [PB15<Alternate<12, PushPull>>]
+    CMD: [PA6<Alternate<12, PushPull>>]
+    D0: [PB4<Alternate<12, PushPull>>, PB7<Alternate<12, PushPull>>]
+    D1: [PA8<Alternate<12, PushPull>>]
+    D2: [PA9<Alternate<12, PushPull>>]
+    D3: [PB5<Alternate<12, PushPull>>]
 }
 
 #[derive(Copy, Clone, Eq, PartialEq)]

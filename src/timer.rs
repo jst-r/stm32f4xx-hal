@@ -469,7 +469,7 @@ pub struct C4;
 macro_rules! channel_impl {
     ( $( $TIM:ident, $C:ident, $PINX:ident, $AF:literal; )+ ) => {
         $(
-            impl<Otype> CPin<$C, crate::pac::$TIM> for $PINX<Alternate<Otype, $AF>> { }
+            impl<Otype> CPin<$C, crate::pac::$TIM> for $PINX<Alternate<$AF, Otype>> { }
         )+
     };
 }

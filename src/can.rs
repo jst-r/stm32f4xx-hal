@@ -23,8 +23,8 @@ pub trait Pins<CAN> {
 
 impl<CAN, TX, RX, const TXA: u8, const RXA: u8> Pins<CAN> for (TX, RX)
 where
-    TX: PinA<Tx, CAN, A = Const<TXA>> + SetAlternate<PushPull, TXA>,
-    RX: PinA<Rx, CAN, A = Const<RXA>> + SetAlternate<PushPull, RXA>,
+    TX: PinA<Tx, CAN, A = Const<TXA>> + SetAlternate<TXA, PushPull>,
+    RX: PinA<Rx, CAN, A = Const<RXA>> + SetAlternate<RXA, PushPull>,
 {
     fn set_alt_mode(&mut self) {
         self.0.set_alt_mode();
@@ -88,7 +88,7 @@ where
 impl<CAN, TX, const TXA: u8> Can<CAN, (TX, NoPin)>
 where
     CAN: Instance,
-    TX: PinA<Tx, CAN, A = Const<TXA>> + SetAlternate<PushPull, TXA>,
+    TX: PinA<Tx, CAN, A = Const<TXA>> + SetAlternate<TXA, PushPull>,
 {
     pub fn tx(usart: CAN, tx_pin: TX) -> Self {
         Self::new(usart, (tx_pin, NoPin))
@@ -98,7 +98,7 @@ where
 impl<CAN, RX, const RXA: u8> Can<CAN, (NoPin, RX)>
 where
     CAN: Instance,
-    RX: PinA<Rx, CAN, A = Const<RXA>> + SetAlternate<PushPull, RXA>,
+    RX: PinA<Rx, CAN, A = Const<RXA>> + SetAlternate<RXA, PushPull>,
 {
     pub fn rx(usart: CAN, rx_pin: RX) -> Self {
         Self::new(usart, (NoPin, rx_pin))
