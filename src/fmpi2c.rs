@@ -67,8 +67,8 @@ where
 
 impl<SCL, SDA, const SCLA: u8, const SDAA: u8> FMPI2c<FMPI2C1, (SCL, SDA)>
 where
-    SCL: PinA<Scl, FMPI2C1, A = Const<SCLA>> + SetAlternate<OpenDrain, SCLA>,
-    SDA: PinA<Sda, FMPI2C1, A = Const<SDAA>> + SetAlternate<OpenDrain, SDAA>,
+    SCL: PinA<Scl, FMPI2C1, A = Const<SCLA>> + SetAlternate<SCLA, OpenDrain>,
+    SDA: PinA<Sda, FMPI2C1, A = Const<SDAA>> + SetAlternate<SDAA, OpenDrain>,
 {
     pub fn new<M: Into<FmpMode>>(i2c: FMPI2C1, mut pins: (SCL, SDA), mode: M) -> Self {
         unsafe {
