@@ -29,7 +29,7 @@ jobs:
           - stm32f469
           - stm32f479
         rust:
-          - stable
+          - beta
         include:
           - rust: nightly
             mcu: stm32f479
